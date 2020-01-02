@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%=photo.title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+        <h1><%=photo.title %></h1>
+        <p><%=photo.description %></p>
+        <img src="data:<%=photo.mimetype%>;base64,<%=photo.image%>" style="width:100%" />
+                <ul>
+                        <li>Make: <%=photo.make %></li>
+                        <li>Model: <%=photo.model %></li>
+                        <li>Created On: <%=photo.created_on %></li>
+                        <%if(gps){%>
+                        <li>
+                            Location:
+                            <a href="/map?lon=<%=photo.lon %>&lat=<%=photo.lat %>">
+                                Map</a></li> <%}%>
+                </ul>
+                    <a href="/"> <button>Home</button></a>
+</body>
+</html>
